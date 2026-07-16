@@ -22,13 +22,13 @@ jobs:
       - name: Checkout your repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js v22 Environment
+      - name: Setup Node.js v22
         uses: actions/setup-node@v4
         with:
-          node-version: 22.14.0
+          node-version: '22.14.0' # Force-pinning the modern string environment
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
 
       - name: Build Astro Static Site
         run: npm run build
